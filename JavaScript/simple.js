@@ -15,8 +15,11 @@ http.createServer(async (req, res) => {
     const sql = 'SELECT * FROM SystemUser WHERE Login = \'' + key + '\'';
     console.dir({ sql });
     db.query(sql, (err, data) => {
-      if (err) throw err;
-      res.end(JSON.stringify(data.rows));
+      if (err) {
+        res.end(err.message);
+        return;
+      }
+      res.end(JSON.stringify(data));
     });
   } else {
     res.end('Unknown handler');
