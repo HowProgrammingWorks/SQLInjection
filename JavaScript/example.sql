@@ -23,6 +23,13 @@ ALTER TABLE SystemGroup ADD CONSTRAINT pkSystemGroup PRIMARY KEY (Id);
 
 CREATE UNIQUE INDEX akSystemGroupName ON SystemGroup (Name);
 
+INSERT INTO SystemGroup VALUES
+  (1, 'Security'),
+  (2, 'Software'),
+  (3, 'Sales'),
+  (4, 'Planning'),
+  (5, 'Quality');
+
 CREATE TABLE GroupUser (
   GroupId  integer NOT NULL,
   UserId   integer NOT NULL
