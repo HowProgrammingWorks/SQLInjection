@@ -6,6 +6,6 @@
   "license": "MIT",
   "main": "server.js",
   "dependencies": {
-    "pg": "^7.12.1"
+    "pg": "^7.18.1"
   }
 }
