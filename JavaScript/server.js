@@ -13,14 +13,14 @@ const api = new Map();
 
 const apiPath = './api/';
 
-const loadFile = name => {
+const loadFile = (name) => {
   const filePath = apiPath + name;
   const key = path.basename(filePath, '.js');
   const method = require(filePath);
   api.set(key, method);
 };
 
-const loadFolder = path => {
+const loadFolder = (path) => {
   fs.readdir(path, (err, files) => {
     if (err) return;
     files.forEach(loadFile);
